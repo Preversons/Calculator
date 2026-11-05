@@ -66,3 +66,14 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+# VisualStudio project files
+.vs/
+Calculator.slnx
+src/src.vcxproj
+src/src.vcxproj.user
+src/src.vcxproj.filters
+
+# VisualStudio maked files
+src/**/Debug
+src/**/Release
