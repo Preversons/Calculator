@@ -16,6 +16,9 @@
     <Filter Include="utils">
       <UniqueIdentifier>{7f898a05-153a-477c-9dc5-8140eafce9c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="utils\DllLoader">
+      <UniqueIdentifier>{7e6836bf-8d18-455d-9b38-4704d721e67f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="macros.h">
@@ -27,10 +30,16 @@
     <ClInclude Include="utils\macros.h">
       <Filter>utils</Filter>
     </ClInclude>
+    <ClInclude Include="utils\DllLoader\DllLoader.hpp">
+      <Filter>utils\DllLoader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\DllLoader\DllLoader.cpp">
+      <Filter>utils\DllLoader</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

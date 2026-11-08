@@ -21,10 +21,12 @@
   <ItemGroup>
     <ClInclude Include="macros.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="utils\DllLoader\DllLoader.hpp" />
     <ClInclude Include="utils\macros.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="utils\DllLoader\DllLoader.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
