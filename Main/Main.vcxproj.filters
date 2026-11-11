@@ -21,17 +21,20 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="macros.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="utils\macros.h">
-      <Filter>utils</Filter>
-    </ClInclude>
     <ClInclude Include="utils\DllLoader\DllLoader.hpp">
       <Filter>utils\DllLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\colorsInANSI.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\header.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="header.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

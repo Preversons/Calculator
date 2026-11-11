@@ -1,8 +1,11 @@
 #pragma once
-#ifndef __CALCULATOR_DLLLOADER_BASIC_H
-#define __CALCULATOR_DLLLOADER_BASIC_H
+#ifndef CALCULATOR__UTILS__DLLLOADER_H__
+#define CALCULATOR__UTILS__DLLLOADER_H__
 
-#include "../macros.h"
+#include "../header.h"
+
+#include <stdexcept>
+#include <string>
 
 #ifdef _WIN32
 
@@ -23,7 +26,7 @@ class DllLoader {
 public:
 	DllLoader() = default;
 
-	// constuctor with dll file path, will open the dll file
+	// constructor with dll file path, will open the dll file
 	DllLoader(const char* dllPath);
 
 	// destructor, will close the dll file
@@ -40,7 +43,17 @@ public:
 		if (hModule == nullptr) {
 			return nullptr;
 		}
-		return (FunctionType*)(GetProcAddress(hModule, functionName));
+
+		FunctionType* funcPtr = (FunctionType*)(GetProcAddress(hModule, functionName));
+
+		if (funcPtr == nullptr) {
+
+			// if the function is not found, throw an exception
+			throw FunctionNotFoundException(dllPath, functionName);
+		}
+
+		return funcPtr;
+
 
 #else // for rest
 
@@ -65,18 +78,66 @@ public:
 #ifdef _WIN32
 private:
 
-	// the handle of the dll file
-	HMODULE hModule;
+ 	// the handle of the dll file on windows
+	HMODULE hModule = nullptr;
 
 #else // else _WIN32
 
 	// the handle of the dll file, for linux or macos, that is, operating system other than windows,
-	// but currently, I don't know what type to use, so I will leave it empty for now
+	// but currently, I don't know what type to use, so I will use void*
+
+	// the handle of the dll file on linux/mac
+	void* hModule = nullptr;
 
 #endif // _WIN32
+
+	// what's the path of the dll file that it's opening
+	// if it isn't opened, dllPath will be "<UNKNOWN>"
+	std::string dllPath = "<UNKNOWN>";
+
+	// for some class of exception
+public:
+
+	// exception class for function not found
+	class FunctionNotFoundException : public std::runtime_error {
+	private:
+
+		// where is the file
+		std::string fileName;
+
+		// what name is function
+		std::string functionName;
+
+	public:
+		FunctionNotFoundException() = default;
+
+		// constructor with all the attributes
+		// @param fileName what file is the function in
+		// @param functionName what name is function
+		FunctionNotFoundException(const std::string& fileName, const std::string& functionName)
+			: fileName(fileName), functionName(functionName), runtime_error("<UNKNOWN>") { }
+
+		const char* what()const noexcept override;
+	};
+
+	// exception class for dll file cannot open
+	class DllCannotOpenException : public std::runtime_error {
+	private:
+		// where is the file
+		std::string fileName;
+
+	public:
+		DllCannotOpenException() = default;
+
+		// constructor with fileName
+		// @param fileName what file cannot be opened
+		DllCannotOpenException(const std::string& fileName) : fileName(fileName), runtime_error("<UNKNOWN>") {}
+
+		const char* what()const noexcept override;
+	};
 
 }; // end class DllLoader
 
 _CALCULATOR_UTILS_END
 
-#endif // !__CALCULATOR_DLLLOADER_BASIC_H
+#endif // !CALCULATOR__UTILS__DLLLOADER_H__

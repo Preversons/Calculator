@@ -19,10 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="macros.h" />
+    <ClInclude Include="header.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="utils\colorsInANSI.h" />
     <ClInclude Include="utils\DllLoader\DllLoader.hpp" />
-    <ClInclude Include="utils\macros.h" />
+    <ClInclude Include="utils\header.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

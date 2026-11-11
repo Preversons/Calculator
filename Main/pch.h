@@ -1,6 +1,6 @@
 #pragma once
-#ifndef __CALCULAOR_PCH_H
-#define __CALCULAOR_PCH_H
+#ifndef CALCULAOR__PCH_H
+#define CALCULAOR__PCH_H
 
 
 // IO
@@ -13,6 +13,10 @@
 #include <vector>
 #include <map>
 
+// exceptions
+#include <exception>
+#include <stdexcept>
+
 // from C
 #include <cctype>
 #include <cstdlib>
@@ -24,4 +28,4 @@
 
 
 
-#endif // !__CALCULAOR_PCH_H
+#endif // !CALCULAOR__PCH_H
