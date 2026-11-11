@@ -27,6 +27,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="testing.cpp" />
     <ClCompile Include="utils\DllLoader\DllLoader.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
