@@ -27,13 +27,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="testing.cpp" />
     <ClCompile Include="utils\DllLoader\DllLoader.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{93e444f7-9b39-44fe-a192-6fe4ddb46710}</ProjectGuid>
+    <ProjectGuid>{9B8EDB97-32E1-A058-0EC1-DB50870D34A7}</ProjectGuid>
     <RootNamespace>Main</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>

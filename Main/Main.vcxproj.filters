@@ -24,14 +24,14 @@
     <ClInclude Include="pch.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="utils\DllLoader\DllLoader.hpp">
-      <Filter>utils\DllLoader</Filter>
-    </ClInclude>
     <ClInclude Include="utils\colorsInANSI.h">
       <Filter>utils</Filter>
     </ClInclude>
     <ClInclude Include="utils\header.h">
       <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\DllLoader\DllLoader.hpp">
+      <Filter>utils\DllLoader</Filter>
     </ClInclude>
     <ClInclude Include="header.h">
       <Filter>头文件</Filter>
@@ -43,9 +43,6 @@
     </ClCompile>
     <ClCompile Include="utils\DllLoader\DllLoader.cpp">
       <Filter>utils\DllLoader</Filter>
-    </ClCompile>
-    <ClCompile Include="testing.cpp">
-      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
